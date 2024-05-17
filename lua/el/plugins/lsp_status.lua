@@ -32,7 +32,7 @@ el_lsp_status.server_progress = function(_, buffer)
     return ''
   end
 
-  local buffer_clients = vim.lsp.buf_get_clients(buffer.bufnr)
+  local buffer_clients = vim.lsp.get_clients({ bufnr = buffer.bufnr })
   local buffer_client_set = {}
   for _, v in pairs(buffer_clients) do
     buffer_client_set[v.name] = true
